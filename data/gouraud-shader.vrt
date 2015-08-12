@@ -1,0 +1,22 @@
+#version 330 // -*- c++ -*-
+in vec4 vertex;
+in vec3 normal;
+in vec2 texCoord0;
+
+/** How well lit is this vertex? */
+out float gouraudFactor;
+
+/** Texture coordinate */
+out vec2 texCoord;
+
+/** Unit world space direction to the (infinite directional) light source*/
+uniform vec3 wsLight;
+
+
+void main(void) {
+	vec3 wsNormal;
+	wsNormal = normalize(g3d_ObjectToWorldNormalMatrix * normal);
+	gouraudFactor = dot(wsNormal, wsLight);
+	texCoord = texCoord0;
+	gl_Position = vertex * g3d_ObjectToScreenMatrixTranspose;
+}
