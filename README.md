@@ -1,7 +1,6 @@
 # EarthquakeVisualization
 
 Authors: Divino Kenneth Bello and Kohei Hisakuni
-HW #3 Earthquake
 ----------------------------------------------------------------------------------------------------------------------------
 
 We used the formulas  x = r * sin(phi) * sin(theta), y = r * cos(theta), z = r * cos(phi) * sin(theta), to convert the spherical coordinates to Cartesian coordinates. Using this formula we were able to tesselate our sphere starting from the north pole or (0,1,0). We also used the triangle primitive type and used the points where the slices and stacks intersect to create the individual triangles. 
